@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if is_authenticated %}
+        <h1>hello {{ name }}</h1>
+    {% else %}
+        <h1>hello User</h1>
+    {% endif %}
+    
+    {% comment %} <h2>{{ first_list.0 }}</h2> {% endcomment %}
+    <h2>{{ temp_object.x }}</h2>
+    {% for x in first_list %}
+        <h2>first: {{ x }}</h2>
+    {% endfor %}
+
+    <h1>Filters</h1>
+    {{ first_list|length }}
+    {{ first_list|length_is:"4" }}
+</body>
+</html>
